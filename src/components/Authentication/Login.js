@@ -6,7 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
-
+const backendBaseURL = 'https://chatter-upg4.onrender.com';
 const Login = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -37,8 +37,13 @@ const Login = () => {
         },
       };
 
+      // const { data } = await axios.post(
+      //   '/api/user/login',
+      //   { email, password },
+      //   config
+      // );
       const { data } = await axios.post(
-        '/api/user/login',
+        `{backendBaseURL}/api/user/login`,
         { email, password },
         config
       );

@@ -43,7 +43,7 @@ const Login = () => {
       //   config
       // );
       const { data } = await axios.post(
-        `{backendBaseURL}/api/user/login`,
+        `${backendBaseURL}/api/user/login`,
         { email, password },
         config
       );
